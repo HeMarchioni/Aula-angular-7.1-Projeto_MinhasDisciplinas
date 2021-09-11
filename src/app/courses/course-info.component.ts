@@ -30,6 +30,7 @@ export class CourseInfoComponent implements OnInit{
   }
 
   onSubmit() {
+    this.courseService.update(this.curso,this.indice)
     this.router.navigate(['/courses']);
   }
 

@@ -6,7 +6,7 @@ import {Course} from "./course";
   templateUrl: './course-list.component.html'
 })
 
-export class CourseListComponent implements OnInit{  // OnInit componente ira aparecer realiza uma função
+export class CourseListComponent implements OnInit{  
 
   curso: Course = new Course;
 
@@ -23,6 +23,8 @@ export class CourseListComponent implements OnInit{  // OnInit componente ira ap
 
 
   onSubmit() {
+    this.curso.p1="0,00"
+    this.curso.p2="0,00"
     this.courseService.save(this.curso);
     this.curso = new Course();
   }

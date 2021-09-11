@@ -13,12 +13,12 @@
 
     </thead>
     <tbody>
-    <tr *ngFor="let curso of courseService.retrieveAll(), index as i">
+    <tr *ngFor="let curso of cursos, index as i">
 
     <td>{{curso.name}}</td>
-    <td><input type="text"  value="{{curso.p1}}" class="form-control" required [(ngModel)]="curso.p1" name="p1"></td>
-    <td><input type="text"   value="{{curso.p2}}" class="form-control" required [(ngModel)]="curso.p2" name="p2"></td>
-    
+    <td><input  class="form-control" type="text" [value]="curso.p1" [(ngModel)]="curso.p1" (change)="updateNota()"></td>
+    <td><input class="form-control"  type="text" [value]="curso.p2" [(ngModel)]="curso.p2" (change)="updateNota()"></td>
+
 </tr>
 
 

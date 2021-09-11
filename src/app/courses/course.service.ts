@@ -39,7 +39,15 @@ export class CourseService {
     localStorage.setItem('courses', JSON.stringify(this.COURSES));
   }
 
+  update(course: Course,indice:number) {
+    this.COURSES.splice(indice,1,course);
+    localStorage.setItem('courses', JSON.stringify(this.COURSES));
+  }
 
+
+  updateAll(course: Course[]) {
+    localStorage.setItem('courses', JSON.stringify(course));
+  }
 
 
   deleteByIndice(indice: number) {

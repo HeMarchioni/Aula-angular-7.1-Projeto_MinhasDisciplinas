@@ -9,14 +9,17 @@ import {Course} from "../course";
 })
 export class NotaComponent implements OnInit {
 
-  curso: Course = new Course;
+  cursos: Course[];
 
   constructor(public courseService: CourseService) { }
 
   ngOnInit(): void {
+    this.cursos = this.courseService.retrieveAll();
   }
 
-  
+  updateNota() {
+    this.courseService.updateAll(this.cursos);
+  }
 
 
 }
