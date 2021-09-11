@@ -1,0 +1,59 @@
+<h3>Adicionar Disciplina</h3>
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">nome</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="curso.name" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="diaSemana">Dia da Semana</label>
+      <input type="text" class="form-control" id="diaSemana" required [(ngModel)]="curso.diaSemana" name="diaSemana">
+    </div>
+
+    <div class="form-group">
+      <label for="horario">Horário</label>
+      <input type="text" class="form-control" id="horario" required [(ngModel)]="curso.horario" name="horario">
+    </div>
+
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+
+
+
+
+
+<div class="panel-heading my-3">
+  <h2>Grade Disciplinas</h2>
+</div>
+
+<div class="panel-body">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Dia da Semana</th>
+      <th>Horário</th>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr *ngFor="let course of courseService.retrieveAll(), index as i">
+      <td>{{course.name}}</td>
+      <td>{{course.diaSemana}}</td>
+      <td>{{course.horario}}</td>
+      <td>
+        <a [routerLink]="['/courses/info', i]" class="btn btn-primary mr-2">Edit</a>
+        <button (click)="courseService.deleteByIndice(i)" class="btn btn-danger">Delete</button>
+      </td>
+
+    </tr>
+
+
+  </tbody>
+
+</table>
+</div>

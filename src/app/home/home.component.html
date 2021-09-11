@@ -1,0 +1,33 @@
+<div class="ml-4">
+<h1 class="mt-4 "> Desenvolvido por: </h1>
+
+<h2 class="mb-3">Henrique Marchioni</h2>
+
+<p>
+    Ra: 0050831921010
+</p>
+
+<a href="https://github.com/HeMarchioni" target="_blank"> GitHub - Portfolio</a>
+</div>
+
+<div class="panel panel-primary my-3">
+<div class="panel-heading">
+<h2>Disciplinas</h2>
+</div>
+<div class="panel-body">
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Material</th>
+        <th>Horário</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let dsplna of courseService.retrieveAll(),index as i">
+        <td>{{dsplna.name}}</td>
+        <td>{{dsplna.horario}}</td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</div>

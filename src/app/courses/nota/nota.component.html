@@ -1,0 +1,28 @@
+<div class="panel-heading my-3">
+<h2>Grade Disciplinas</h2>
+</div>
+
+<div class="panel-body">
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Nota P1</th>
+        <th>Nota P2</th>
+    </tr>
+
+    </thead>
+    <tbody>
+    <tr *ngFor="let curso of courseService.retrieveAll(), index as i">
+
+    <td>{{curso.name}}</td>
+    <td><input type="text"  value="{{curso.p1}}" class="form-control" required [(ngModel)]="curso.p1" name="p1"></td>
+    <td><input type="text"   value="{{curso.p2}}" class="form-control" required [(ngModel)]="curso.p2" name="p2"></td>
+    
+</tr>
+
+
+    </tbody>
+
+</table>
+</div>
